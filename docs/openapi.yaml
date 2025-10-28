@@ -1,0 +1,11 @@
+
+openapi: 3.0.3
+info:
+  title: Task API
+  version: 1.0.0
+  description: Simple Task API with OpenAPI docs
+servers:
+  - url: /
+paths: {}
+components:
+  $ref: './components/schemas.yaml#/components'
