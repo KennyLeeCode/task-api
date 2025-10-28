@@ -1,0 +1,33 @@
+
+paths:
+  /tasks/{id}:
+    get:
+      summary: Get a task by ID
+      operationId: getTaskById
+      tags: [Tasks]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+          description: Numeric ID of the task
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Invalid ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '404':
+          description: Task not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundError'
